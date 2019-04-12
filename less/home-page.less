@@ -1,5 +1,4 @@
 .home {
-
   .intro {
     padding: 90px 0 10px;
     border-bottom: 2px dashed @navigation-border;
@@ -9,8 +8,20 @@
       height: auto;
     }
 
-    h2 {
-      margin-top: 20px;
+    #holder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px 0px 10px 0px;
+
+      #wheel {
+        width: 320px;
+        height: 45px;
+        background: rgb(4, 174, 255, 0.8);
+        border-radius: 5px;
+        padding: 10px;
+        color: white;
+      }
     }
   }
 
@@ -20,8 +31,6 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-   
-    
     .text-content {
       width: 48%;
       padding-right: 1%;
@@ -105,10 +114,10 @@
         width: 80%;
         margin: 0 auto 30px;
       }
-      
+
       .btn {
-        .button-creator(200px, 45px, @button-bg, @white, 1.8rem);     
+        .button-creator(200px, 45px, @button-bg, @white, 1.8rem);
       }
     }
   }
-}// home
+} // home

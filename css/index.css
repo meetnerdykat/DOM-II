@@ -234,8 +234,19 @@ img {
   max-width: 100%;
   height: auto;
 }
-.home .intro h2 {
-  margin-top: 20px;
+.home .intro #holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px 10px 0px;
+}
+.home .intro #holder #wheel {
+  width: 320px;
+  height: 45px;
+  background: #04aeff;
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
 }
 .home .content-section {
   margin: 30px 0;
