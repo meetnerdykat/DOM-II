@@ -1,7 +1,34 @@
 // Your code goes here
 
+// DOUBLE CLICK
+const card = document.querySelector('aside');
+
+card.addEventListener('dblclick', function(e) {
+  card.classList.toggle('large');
+});
+
+// SELECT
+function logSelection(event) {
+  const log = document.getElementById('log');
+  const selection = event.target.value.substring(
+    event.target.selectionStart,
+    event.target.selectionEnd
+  );
+  log.textContent = `You selected: ${selection}`;
+}
+
+const selectedInput = document.querySelector('#trySelecting');
+selectedInput.addEventListener('select', logSelection);
+
+// SCROLL
+document.getElementById('myDIV').addEventListener('scroll', myFunction);
+
+function myFunction() {
+  document.getElementById('demo').innerHTML = 'You scrolled in div.';
+}
+
 // RESIZE
-const delay = 75; // Your delay here
+const delay = 0.75; // Your delay here
 
 const originalResize = evt => {
   let w = window.outerWidth;
@@ -151,6 +178,16 @@ let scale = 1;
 const el = document.querySelector('#holder');
 holder.onwheel = zoom;
 
+// KEYDOWN
+const input = document.querySelector('input');
+const keyDown = document.getElementById('keyDown');
+
+input.addEventListener('keydown', welcome);
+
+function welcome(e) {
+  keyDown.textContent += `Hello and Welcome! `;
+}
+
 // MOUSEOVER - this handler will be executed every time the cursor is moved over a different list item
 mouseOver.addEventListener(
   'mouseover',
@@ -166,12 +203,25 @@ mouseOver.addEventListener(
   false
 );
 
-// KEYDOWN
-const input = document.querySelector('input');
-const keyDown = document.getElementById('keyDown');
+// preventDefault() - prevent the links from refreshing the page
+document.querySelector('.nav').addEventListener('click', function(event) {
+  event.preventDefault();
+});
 
-input.addEventListener('keydown', welcome);
+// stopPropagation()
+function stopEvent(event) {
+  c2 = document.getElementById('c2');
+  c2.innerHTML =
+    "My text DOES change because I don't have the stopPropagation method on me. <br/> Click me one last time!";
 
-function welcome(e) {
-  keyDown.textContent += `Hello and Welcome! `;
+  // this ought to keep t-daddy from getting the click.
+  event.stopPropagation();
+  alert(
+    "My text doesn't change because I've got the stopPropagation method on me"
+  );
+}
+
+function load() {
+  elem = document.getElementById('tableRow1');
+  elem.addEventListener('click', stopEvent, false);
 }

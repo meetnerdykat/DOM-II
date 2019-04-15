@@ -19,15 +19,17 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body onload="load();">
     <header class="main-navigation">
       <div class="container nav-container">
         <h1 class="logo-heading">Fun Bus</h1>
+        <!-- MOUSEOVER -->
+        <!-- Having the hashtag symbol inside the href stops the page from refreshing every time they are clicked, so I took them out because this assignment requires that I stop them from refreshing the page using preventDefault() instead. So as a reminder to myself, look in the js file for this instead... -->
         <nav class="nav" id="mouseOver">
-          <a class="nav-link" href="#">Home</a>
-          <a class="nav-link" href="#">About Us</a>
-          <a class="nav-link" href="#">Blog</a>
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link" href="">Home</a>
+          <a class="nav-link" href="">About Us</a>
+          <a class="nav-link" href="">Blog</a>
+          <a class="nav-link" href="">Contact</a>
           <!-- <ul id="msOver">
             <li><a class="nav-link" href="#">Home</a></li>
             <li><a class="nav-link" href="#">About Us</a></li>
@@ -41,13 +43,16 @@
     <div class="container home">
       <header class="intro">
         <img src="img/fun-bus.jpg" alt="bus in the sand" />
-
-        <input
-          placeholder="PLEASE CLICK HERE THEN PRESS A KEY ON THE KEYBOARD"
-          size="53"
-        />
+        <!-- KEYDOWN -->
+        <div id="forKeyDown">
+          <input
+            placeholder="PLEASE CLICK HERE - THEN PRESS A KEY ON THE KEYBOARD"
+            size="55"
+          />
+        </div>
         <p id="keyDown"></p>
 
+        <!-- WHEEL -->
         <div id="holder"><h2 id="wheel">Welcome To Fun Bus!</h2></div>
 
         <p>
@@ -57,12 +62,10 @@
           travelblogger. Adventure fun traveler pretty design website
           expedition.
         </p>
-        <section class="threeCols" style="display: flex;">
+
+        <section class="top3Cols">
           <!-- DRAG / DROP COL -->
-          <div
-            class="col"
-            style="background-color: #9fecff; width: 33%; margin-right: 5px; border-radius: 8px; padding: 15px;"
-          >
+          <div class="col">
             <div class="dropzone">
               <div
                 id="draggable"
@@ -78,10 +81,7 @@
             <div class="dropzone">MAYBE</div>
           </div>
           <!-- LOAD COL -->
-          <div
-            class="col controls"
-            style="background-color: #9fecff; width: 33%; margin-right: 5px; border-radius: 8px; padding: 15px;"
-          >
+          <div class="col controls">
             <button id="reload" type="button">Reload</button>
 
             <div class="event-log">
@@ -94,20 +94,17 @@
               ></textarea>
             </div>
           </div>
-          <div
-            class="col"
-            style="background-color: #9fecff; width: 33%; border-radius: 8px; padding: 15px;"
-          >
+          <!-- FOCUS -->
+          <div class="col" style="margin-right: 0px;">
             <form id="form">
               <input type="text" placeholder="text input" />
               <input type="password" placeholder="password" />
             </form>
           </div>
         </section>
-        <section
-          class="resize"
-          style="background-color: #ffecca; margin-top: 20px; width: 100%; border-radius: 8px; padding: 15px;"
-        >
+
+        <!-- RESIZE -->
+        <section class="resize">
           <p>
             Try to resize the browser window to display the windows height and
             width...
@@ -190,6 +187,59 @@
             expedition clean excursion traveling.
           </p>
           <div class="btn">Sign Me Up!</div>
+        </div>
+      </section>
+
+      <!-- SCROLL, SECLECT , & DOUBLE CLICK -->
+      <section class="bottom3Cols">
+        <!-- SCROLL -->
+        <div class="col">
+          <h5>
+            Lambda School So Far
+          </h5>
+          <div id="myDIV">
+            I'm learning about JS Events, addEventListeners, and stopPropagation
+            and preventDefault. This is only my first and a half month at Lambda
+            School, but I've already learned so much!
+            <br /><br />
+            I'm super excited about learning React and can say that I think I
+            will appreciate it a lot more now that I've done a lot of JavaScript
+            "the long way". It's been tough learning Vanilla JS, but I know it
+            serves to make me a better developer.
+          </div>
+
+          <p id="demo"></p>
+        </div>
+        <!-- SELECT -->
+        <div class="col controls">
+          <h2>Select Text</h2>
+          <input
+            id="trySelecting"
+            size="35"
+            value="Try selecting some text in this element."
+          />
+          <p id="log"></p>
+        </div>
+        <!-- DOUBLE CLICK -->
+        <div class="col" style=" margin-right: 0px;">
+          <aside>
+            <h2>Double Click</h2>
+            <p>to resize me.</p>
+          </aside>
+        </div>
+      </section>
+      <section class="stopProp">
+        <div class="col">
+          <table id="t-daddy" onclick="alert('See how this all works now?');">
+            <tr id="tableRow1">
+              <td id="c1">
+                Click me!
+              </td>
+            </tr>
+            <tr id="tableRow2">
+              <td id="c2">Click me too!</td>
+            </tr>
+          </table>
         </div>
       </section>
     </div>
