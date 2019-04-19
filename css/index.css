@@ -234,8 +234,62 @@ img {
   max-width: 100%;
   height: auto;
 }
-.home .intro h2 {
+.home .intro #forKeyDown {
+  display: flex;
   margin-top: 20px;
+  justify-content: center;
+  background: #ffecca;
+  height: 80px;
+  padding: 20px 0px;
+  border-radius: 8px;
+}
+.home .intro #forKeyDown input {
+  padding: 5px;
+}
+.home .intro #holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px 20px 0px;
+}
+.home .intro #holder h2#wheel {
+  width: 320px;
+  height: 45px;
+  background: #9fecff;
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+}
+.home .intro .top3Cols {
+  display: flex;
+}
+.home .intro .top3Cols .col {
+  background-color: #9fecff;
+  width: 33%;
+  margin-right: 5px;
+  border-radius: 8px;
+  padding: 15px;
+}
+.home .intro .top3Cols .col #draggable {
+  width: 200px;
+  height: 35px;
+  text-align: center;
+  padding: 8px;
+  font-size: 1.25rem;
+}
+.home .intro .top3Cols .col .dropzone {
+  width: 200px;
+  height: 60px;
+  background: #ffecca;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.home .intro .resize {
+  background-color: #ffecca;
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 8px;
+  padding: 15px;
 }
 .home .content-section {
   margin: 30px 0;
@@ -349,4 +403,56 @@ img {
 .home .content-pick .destination .btn:hover {
   background: #FFFFFF;
   color: #17A2B8;
+}
+.home .bottom3Cols {
+  display: flex;
+  margin-bottom: 5px;
+}
+.home .bottom3Cols .col {
+  background-color: #9fecff;
+  width: 33%;
+  margin-right: 5px;
+  border-radius: 8px;
+  padding: 15px;
+}
+.home .bottom3Cols .col #myDIV {
+  width: 220px;
+  height: 100px;
+  overflow-y: scroll;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+.home .bottom3Cols .col h5 {
+  font-size: 22px;
+  padding-bottom: 10px;
+}
+.home aside {
+  background: #ffecca;
+  border-radius: 1em;
+  display: inline-block;
+  padding: 1em;
+  transform: scale(0.9);
+  transform-origin: 0 0;
+  transition: transform 0.6s;
+}
+.home .large {
+  transform: scale(1);
+}
+.home .stopProp {
+  display: flex;
+  margin-bottom: 30px;
+}
+.home .stopProp .col {
+  background-color: #9fecff;
+  width: 100%;
+  height: 125px;
+  border-radius: 8px;
+  padding: 15px;
+}
+.home .stopProp .col td {
+  font-size: 20px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px dashed black;
+  height: 50px;
 }
